@@ -1,0 +1,578 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Bob's Creek Cottage | A tin cottage on a farm between Orange and Molong</title>
+<meta name="description" content="A renovated country cottage between Orange and Molong, with a wood fire, two queen bedrooms, an outdoor bath and a private laneway down to Molong Creek. A website idea made by Lamplit Studio for Bob's Creek Cottage.">
+<meta property="og:title" content="Bob's Creek Cottage, Molong">
+<meta property="og:description" content="A website idea made by Lamplit Studio for Bob's Creek Cottage. Not their official site.">
+<meta property="og:image" content="https://sparshsainied-prog.github.io/bobscreekcottage/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://sparshsainied-prog.github.io/bobscreekcottage/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23f1eee8'/%3E%3Cpath d='M4 15 9 8h14l5 7z' fill='%238f857d'/%3E%3Crect x='6' y='15' width='20' height='11' fill='%23fff' stroke='%232c2f33'/%3E%3Crect x='14' y='18' width='4' height='8' fill='%232f7369'/%3E%3C/svg%3E">
+<link rel="preload" as="image" href="img/day-d.jpg" media="(min-width: 700px)" fetchpriority="high">
+<link rel="preload" as="image" href="img/day-m.jpg" media="(max-width: 699px)" fetchpriority="high">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Karla:wght@400;600;700&family=Zilla+Slab:wght@600;700&display=swap">
+<style>
+/* Tokens come from the cottage (see brand.md):
+   tin   = the white-painted corrugated iron walls
+   slate = the verandah posts and the cottage at night
+   door  = the green front door (darkened a step so white text reads on it)
+   roof  = the weathered, rust-flecked iron roof
+   glow  = the festoon lights over the outdoor bath at night
+   Zilla Slab has the plain, sturdy slab letters of country hall and shed signs. Karla is for reading. */
+:root{
+  --tin:#f1eee8;
+  --tin-2:#e2ddd3;
+  --white:#ffffff;
+  --slate:#2c2f33;
+  --slate-2:#3b3f44;
+  --door:#2f7369;
+  --door-2:#3a877c;
+  --roof:#8f857d;
+  --glow:#f0b45e;
+  --ink:#2c2f33;
+  --ink-soft:#5d5f61;
+  --display:"Zilla Slab","Rockwell","Georgia",serif;
+  --text:"Karla","Avenir Next","Segoe UI",sans-serif;
+  --gut:max(20px, env(safe-area-inset-left, 0px));
+  --gut-r:max(20px, env(safe-area-inset-right, 0px));
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--tin);color:var(--ink);font-family:var(--text);font-size:18px;line-height:1.6}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--door);outline-offset:3px}
+.dusk :focus-visible,.bath :focus-visible,.close :focus-visible,.phonebar :focus-visible,footer :focus-visible,.top :focus-visible,.strip :focus-visible,.guests :focus-visible{outline-color:var(--glow)}
+h1,h2,h3{font-family:var(--display);font-weight:700;line-height:1.04;margin:0;text-wrap:balance}
+p{margin:0;text-wrap:pretty}
+.skip{position:absolute;left:-9999px;top:0}
+.skip:focus{left:12px;top:12px;z-index:60;background:var(--tin);padding:8px 12px}
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+.strip{background:var(--slate);color:var(--tin);font-size:14px;text-align:center;margin:0;
+  padding:8px var(--gut-r) 8px var(--gut);padding-top:calc(8px + env(safe-area-inset-top,0px))}
+
+.top{position:absolute;left:0;right:0;z-index:20;display:flex;justify-content:space-between;align-items:center;gap:14px;padding:14px var(--gut-r) 0 var(--gut)}
+.word{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--slate)}
+.word svg{width:44px;height:30px;flex:none}
+.word b{font-family:var(--display);font-weight:700;font-size:22px;line-height:1}
+.word i{display:block;font-style:normal;font-size:13px;font-weight:600;color:var(--ink-soft);margin-top:2px}
+.top nav{display:flex;gap:22px;align-items:center;font-weight:600;font-size:15px}
+.top nav a{text-decoration:none;color:var(--slate)}
+.top nav a:hover{text-decoration:underline;text-underline-offset:4px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 20px;border-radius:3px;
+  font-family:var(--text);font-weight:700;font-size:16px;text-decoration:none;border:0;cursor:pointer;background:var(--door);color:#fff}
+.btn:hover{background:var(--door-2)}
+.btn.line{background:transparent;color:inherit;box-shadow:inset 0 0 0 2px currentColor}
+.btn.line:hover{background:rgba(127,127,127,.12)}
+.btn.glow{background:var(--glow);color:var(--slate)}
+.btn.glow:hover{background:#f4c47e}
+@media (max-width:820px){.top nav a:not(.btn){display:none}.word i{display:none}}
+@media (max-width:360px){.word b{font-size:19px}.top nav .btn{padding:0 14px}}
+
+/* ---------- Act 1: day goes to dusk behind the cottage ---------- */
+.dusk{position:relative;height:230vh}
+.stage{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;background:#e89c70}
+.layer{position:absolute;inset:0;will-change:transform,opacity}
+.layer img{width:100%;height:100%;object-fit:cover;object-position:50% 100%}
+/* the sky sits above the roofline; the house planes sit on the ground */
+.l-sky{inset:0 0 auto 0;height:54%;transform-origin:50% 100%;background:#2b2a33}
+.l-day,.l-cottage,.l-shade{inset:auto 0 0 0;height:74%}
+.l-cottage{transform-origin:50% 100%}
+@media (max-width:699px){.l-sky,.l-daysky{height:58%}.l-day,.l-cottage,.l-shade{height:62%}}
+.l-daysky{inset:0 0 auto 0;height:54%;background:linear-gradient(to bottom,#b9cee1,#d3e1ed)}
+@media (min-width:700px){
+  .copy{background:rgba(241,238,232,.93);padding:clamp(18px,2vw,28px) clamp(20px,2.4vw,32px);border-radius:3px;max-width:560px}
+  .copy h1{font-size:clamp(46px,5.6vw,84px)}
+  .copy-night{background:rgba(44,47,51,.8);padding:22px 26px;border-radius:3px}
+  .l-sky{height:36%}.l-daysky{height:40%}
+}
+.copy-night{text-shadow:0 1px 10px rgba(30,26,34,.6)}
+.l-shade{opacity:0}
+.copy{position:absolute;z-index:6;left:var(--gut);top:clamp(86px,13vh,130px);max-width:min(620px, calc(100% - 40px))}
+.copy h1{font-size:clamp(46px,7vw,100px);color:var(--slate)}
+.copy p{font-size:clamp(18px,1.6vw,22px);margin-top:12px;max-width:26em;color:var(--slate)}
+.copy p.where{font-size:16px;font-weight:700;margin-top:0;margin-bottom:8px;color:var(--door)}
+.copy-night{position:absolute;z-index:6;right:var(--gut-r);top:clamp(86px,13vh,130px);max-width:440px;opacity:0;color:#fff}
+.copy-night h2{font-size:clamp(30px,3.6vw,50px)}
+.copy-night p{margin-top:10px;font-size:18px;color:#f3e6d6}
+@media (max-width:699px){
+  .dusk{height:210vh}
+  .copy{top:76px;right:var(--gut-r)}
+  .copy h1{font-size:clamp(40px,12vw,54px)}
+  .copy-night{left:var(--gut);right:var(--gut-r);top:76px}
+}
+@media (max-height:520px){.copy p:not(.where){display:none}.copy h1{font-size:clamp(30px,5vw,48px)}.copy-night p{display:none}}
+
+/* ---------- Sections ---------- */
+.wrap{padding-left:var(--gut);padding-right:var(--gut-r)}
+.inner{max-width:1200px;margin:0 auto}
+section{scroll-margin-top:10px}
+h2.big{font-size:clamp(42px,5.8vw,78px)}
+.lede{font-size:clamp(19px,1.6vw,21px);max-width:34em}
+.quote{font-size:clamp(20px,1.9vw,25px);line-height:1.4;font-weight:600}
+.who{font-size:15px;color:var(--ink-soft);margin-top:8px}
+.cap{font-size:14px;color:var(--ink-soft);margin-top:8px}
+dl.facts{margin:0;display:grid;grid-template-columns:auto minmax(0,1fr);column-gap:22px;row-gap:12px;font-size:17px;line-height:1.5}
+dl.facts dt{font-weight:700;font-size:15px;padding-top:2px;white-space:nowrap}
+dl.facts dd{margin:0;border-bottom:1px solid var(--tin-2);padding-bottom:12px}
+
+/* Inside */
+.inside{padding-block:clamp(72px,9vw,130px) 0;background:var(--white)}
+.inside .inner{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,6fr);gap:clamp(28px,5vw,72px);align-items:start}
+.inside .lede{margin-top:18px}
+.inside .hero-ph img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:3px}
+.inside dl.facts{margin-top:28px}
+@media (max-width:880px){.inside .inner{grid-template-columns:minmax(0,1fr)}}
+.rail{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:thin;
+  padding:clamp(36px,5vw,60px) var(--gut-r) clamp(64px,8vw,110px) var(--gut);margin:0;background:var(--white)}
+.rail figure{margin:0;flex:0 0 auto;width:clamp(230px,26vw,380px);scroll-snap-align:start}
+.rail img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:3px;background:var(--tin-2)}
+.rail figcaption{font-size:15px;margin-top:8px;color:var(--ink-soft)}
+
+/* The bath: night */
+.bath{background:var(--slate);color:var(--tin);padding-block:clamp(72px,9vw,130px)}
+.bath .inner{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(28px,5vw,72px);align-items:center}
+.bath .lede{margin-top:18px;color:#e6e1d8}
+.bath .quote{margin-top:28px}
+.bath .who{color:#bdb6aa}
+.lamp{overflow:hidden;border-radius:3px;clip-path:inset(0 var(--wipe,0%) 0 0)}
+.lamp img{width:100%;aspect-ratio:4/5;object-fit:cover}
+.bath .cap{color:#bdb6aa}
+.bath-strip{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:clamp(36px,5vw,60px)} /* slop-ok: three real photos of the bath, not icon tiles */
+.bath-strip figure{margin:0}
+.bath-strip img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:3px}
+.bath-strip figcaption{font-size:14px;color:#bdb6aa;margin-top:8px}
+@media (max-width:880px){.bath .inner{grid-template-columns:minmax(0,1fr)}.bath .ph{order:-1}}
+
+/* ---------- The peak: down the laneway to the creek, on a sketch of the walk ---------- */
+.walk{position:relative;height:340vh;background:var(--tin)}
+.walk-stage{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);
+  gap:clamp(20px,3vw,48px);align-items:center;padding:clamp(70px,9vh,96px) var(--gut-r) clamp(24px,5vh,48px) var(--gut)}
+.map{position:relative;height:100%;max-height:calc(100svh - 120px);aspect-ratio:600/900;justify-self:center;transform:rotate(-1.2deg)}
+.map .sheet{position:absolute;inset:0;background:#fff;box-shadow:0 14px 30px -18px rgba(44,47,51,.55)}
+.map svg{position:absolute;inset:0;width:100%;height:100%}
+.magnet{position:absolute;left:50%;top:-12px;width:28px;height:28px;margin-left:-14px;border-radius:50%;background:var(--door);box-shadow:0 3px 6px rgba(0,0,0,.25)}
+.trail{position:absolute;inset:0;overflow:hidden;will-change:transform}
+.trail svg{will-change:transform}
+.walker{position:absolute;left:0;top:0;width:22px;height:22px;margin:-11px 0 0 -11px;border-radius:50%;background:var(--glow);box-shadow:0 0 0 4px #fff, 0 2px 8px rgba(0,0,0,.3);will-change:transform}
+.stops{position:relative;height:100%;max-height:calc(100svh - 120px)}
+.stop{position:absolute;inset:0;margin:0;display:flex;flex-direction:column;opacity:0;will-change:opacity}
+.stop img{flex:1;min-height:0;width:100%;object-fit:cover;border-radius:3px}
+.stop figcaption{padding-top:14px;background:var(--tin)}
+.stop h3{font-size:clamp(26px,2.8vw,40px)}
+.stop p{font-size:17px;margin-top:6px;max-width:32em}
+.walk-head{position:absolute;left:var(--gut);top:clamp(20px,3vh,32px);right:var(--gut-r);font-size:15px;font-weight:700;color:var(--door)}
+@media (max-width:820px) and (orientation:portrait){
+  .walk-stage{grid-template-columns:minmax(0,1fr);grid-template-rows:minmax(0,46fr) minmax(0,54fr);padding:56px var(--gut-r) 18px var(--gut);gap:14px;align-items:stretch}
+  .map{height:100%;max-height:none;justify-self:center}
+  .stops{max-height:none}
+  .stop p{font-size:16px}
+  .stop h3{font-size:24px}
+  .walk-head{top:18px}
+}
+
+/* Fire and farm */
+.farm{padding-block:clamp(72px,9vw,130px);background:var(--white)}
+.farm-head{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:clamp(28px,5vw,72px);align-items:end}
+.sunset{margin:clamp(30px,4vw,48px) 0 0}
+.sunset img{width:100%;aspect-ratio:16/7;object-fit:cover;border-radius:3px}
+.farm-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:12px;margin-top:12px}
+.farm-grid figure{margin:0}
+.farm-grid img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:3px}
+.farm-grid .w4{grid-column:span 4}
+.farm-grid figcaption{font-size:14px;color:var(--ink-soft);margin-top:6px}
+.fire{margin-top:clamp(36px,5vw,60px);display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(24px,4vw,56px);align-items:center}
+.fire img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:3px}
+.fire h3{font-size:clamp(28px,3vw,40px)}
+.fire p{margin-top:12px}
+.note{font-size:15px;background:var(--tin);padding:12px 14px;border-radius:3px;margin-top:18px}
+@media (max-width:880px){.farm-head,.fire{grid-template-columns:minmax(0,1fr)}.farm-grid .w4{grid-column:span 6}.farm-grid .w4:last-child{grid-column:span 12}.farm-grid .w4:last-child img{aspect-ratio:3/2}}
+
+/* Guests */
+.guests{background:var(--door);color:#fff;padding-block:clamp(72px,9vw,120px)}
+.score{display:flex;align-items:baseline;gap:18px;flex-wrap:wrap;margin-top:22px}
+.score b{font-family:var(--display);font-size:clamp(64px,8.6vw,118px);line-height:.9;font-variant-numeric:tabular-nums}
+.score span{font-size:18px;max-width:20em}
+.quotes{list-style:none;margin:clamp(40px,5vw,64px) 0 0;padding:0;display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:22px clamp(28px,5vw,64px)}
+.quotes li{border-top:1px solid rgba(255,255,255,.4);padding-top:16px}
+.quotes li:first-child{grid-row:span 2}
+.quotes li:first-child .quote{font-size:clamp(24px,2.8vw,34px);line-height:1.3}
+.guests .who{color:#d5ebe6}
+@media (max-width:880px){.quotes{grid-template-columns:minmax(0,1fr)}.quotes li:first-child{grid-row:auto}}
+
+/* Getting here */
+.around{padding-block:clamp(72px,9vw,130px)}
+.around .inner{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:clamp(28px,5vw,72px);align-items:start}
+table.dist{width:100%;border-collapse:collapse;margin-top:24px;font-size:17px}
+table.dist th{text-align:left;font-size:15px;color:var(--ink-soft);font-weight:600;padding:0 0 8px}
+table.dist td{padding:12px 0;border-top:1px solid var(--tin-2);vertical-align:top}
+table.dist td:last-child{text-align:right;font-weight:700;white-space:nowrap;padding-left:16px;font-variant-numeric:tabular-nums}
+.around .ph img{width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:3px}
+.small{font-size:14px;color:var(--ink-soft);margin-top:12px}
+@media (max-width:880px){.around .inner{grid-template-columns:minmax(0,1fr)}}
+
+/* Book */
+.book{background:var(--tin-2);padding-block:clamp(72px,9vw,130px)}
+.book-grid{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:clamp(24px,4vw,56px);align-items:center;margin-top:30px}
+.book-grid img{width:100%;aspect-ratio:3/2;object-fit:cover;border-radius:3px}
+.book .lede{margin-top:16px}
+.book .acts{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+.book ul{margin:22px 0 0;padding-left:18px;font-size:16px}
+.book li{margin-bottom:6px}
+@media (max-width:880px){.book-grid{grid-template-columns:minmax(0,1fr)}}
+
+/* Close */
+.close{position:relative;background:var(--slate);color:#fff}
+.close img{width:100%;height:min(80vh,720px);object-fit:cover;object-position:50% 55%}
+.close .panel{position:absolute;left:var(--gut);bottom:clamp(24px,6vh,60px);max-width:540px;background:rgba(44,47,51,.86);padding:clamp(22px,3vw,34px);border-radius:3px}
+.close h2{font-size:clamp(32px,4vw,54px)}
+.close p{margin-top:10px}
+.close .acts{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
+@media (max-width:700px){.close img{height:52vh}.close .panel{position:relative;left:auto;bottom:auto;max-width:none;border-radius:0;background:var(--slate)}}
+footer{background:var(--slate);color:#cfc9bf;font-size:14px;padding-block:28px calc(28px + env(safe-area-inset-bottom,0px))}
+footer .inner{display:grid;gap:6px}
+
+.phonebar{position:fixed;left:0;right:0;bottom:0;z-index:30;display:none;gap:10px;
+  padding:10px var(--gut-r) calc(10px + env(safe-area-inset-bottom,0px)) var(--gut);
+  background:rgba(44,47,51,.97);transform:translateY(110%);visibility:hidden;transition:transform .25s ease-out,visibility 0s .25s}
+.phonebar.on{transform:none;visibility:visible;transition:transform .25s ease-out}
+.phonebar .btn{flex:1;min-height:50px}
+.phonebar .btn.line{color:var(--tin)}
+@media (max-width:820px){.phonebar{display:flex}footer{padding-bottom:calc(96px + env(safe-area-inset-bottom,0px))}}
+
+@media (prefers-reduced-motion: reduce){
+  .dusk,.walk{height:auto}
+  .stage{position:relative;height:auto;overflow:visible;display:flex;flex-direction:column;background:var(--slate)}
+  .layer{position:relative;inset:auto;opacity:1 !important;transform:none !important}
+  .l-sky,.l-cottage,.l-shade,.l-daysky{display:none}
+  .l-day img{height:auto;aspect-ratio:16/10}
+  .copy,.copy-night{position:relative;left:auto;right:auto;top:auto;max-width:none;opacity:1 !important;padding:28px var(--gut-r) 28px var(--gut)}
+  .copy{background:var(--tin);order:-1;padding-top:84px}
+  .walk-stage{position:relative;height:auto;display:block;overflow:visible}
+  .map{height:auto;width:min(420px,86vw);max-height:none;margin:30px auto}
+  .trail,.trail svg{transform:none !important}
+  .walker{display:none}
+  .stops{height:auto;max-height:none;display:grid;gap:28px;grid-template-columns:repeat(2,minmax(0,1fr))}
+  .stop{position:relative;opacity:1 !important}
+  .stop img{flex:none;aspect-ratio:4/3}
+  .walk-head{position:relative;left:auto;top:auto;padding-top:20px}
+  .lamp{clip-path:none !important}
+  .phonebar,.phonebar.on{transition:none}
+}
+@media (prefers-reduced-motion: reduce) and (max-width:700px){.stops{grid-template-columns:minmax(0,1fr)}}
+</style>
+</head>
+<body>
+<a class="skip" href="#book">Skip to booking</a>
+<p class="strip">A website idea made by Lamplit Studio for Bob's Creek Cottage. Not their official site.</p>
+
+<header class="top">
+  <a class="word" href="#dusk" aria-label="Bob's Creek Cottage, back to top">
+    <svg viewBox="0 0 44 30" aria-hidden="true"><path d="M3 13 10 3h24l7 10z" fill="#8f857d"/><path d="M1 15h42v3H1z" fill="#8f857d"/><rect x="5" y="17" width="34" height="12" fill="#fff" stroke="#2c2f33" stroke-width="1.4"/><rect x="9" y="20" width="5" height="5" fill="#2c2f33"/><rect x="30" y="20" width="5" height="5" fill="#2c2f33"/><rect x="20" y="19.5" width="4.5" height="9.5" fill="#2f7369"/></svg>
+    <span><b>Bob's Creek</b><i>Cottage, Molong</i></span>
+  </a>
+  <nav aria-label="Main">
+    <a href="#inside">Inside</a>
+    <a href="#bath">The bath</a>
+    <a href="#creek">The creek</a>
+    <a class="btn" href="#book">Check dates</a>
+  </nav>
+</header>
+
+<main>
+<section class="dusk" id="dusk" data-pin aria-label="Bob's Creek Cottage from the front lawn">
+  <div class="stage">
+    <div class="layer l-sky" aria-hidden="true">
+      <picture><source media="(min-width:700px)" srcset="img/dusk-d.jpg"><img src="img/dusk-m.jpg" alt="" width="1000" height="875"></picture>
+    </div>
+    <div class="layer l-daysky" aria-hidden="true"></div>
+    <div class="layer l-day">
+      <picture><source media="(min-width:1100px)" srcset="img/day-d.jpg"><img src="img/day-m.jpg" alt="Bob's Creek Cottage: a white corrugated iron cottage with a green front door, a deep verandah and a rusty hipped roof, on a green lawn" width="1000" height="1600" fetchpriority="high"></picture>
+    </div>
+    <div class="layer l-cottage" aria-hidden="true">
+      <picture><source media="(min-width:1100px)" srcset="img/cottage-d.webp"><img src="img/cottage-m.webp" alt="" width="1200" height="675"></picture>
+    </div>
+    <div class="layer l-shade" aria-hidden="true" style="background:linear-gradient(to bottom, rgba(44,47,51,0) 30%, rgba(30,26,34,.5))"></div>
+    <div class="copy">
+      <p class="where">Between Orange and Molong, Central West NSW</p>
+      <h1>Bob's Creek Cottage</h1>
+      <p>Green hills, peace and quiet, and the wood fire already burning when you arrive.</p>
+    </div>
+    <div class="copy-night">
+      <h2>Then the sun goes down over Guanna Hill.</h2>
+      <p>Light the outdoor fire, run the bath, and look up at the stars.</p>
+    </div>
+  </div>
+</section>
+
+<section class="inside" id="inside">
+  <div class="wrap">
+    <div class="inner">
+      <figure class="hero-ph" style="margin:0">
+        <img src="img/fire.jpg" srcset="img/fire-600.jpg 600w, img/fire.jpg 1000w" sizes="(max-width:880px) 100vw, 48vw" alt="The wood fire glowing in the original brick fireplace, with a blue rug and a timber floor" width="1000" height="1250" loading="lazy">
+        <figcaption class="cap">The original homestead brick fireplace, with a wood fire in it.</figcaption>
+      </figure>
+      <div>
+        <h2 class="big">Inside</h2>
+        <p class="lede">A tin cottage with a freshly renovated, character-filled inside. Two queen bedrooms, a lounge round the fire, and a kitchen with everything you need to cook.</p>
+        <dl class="facts">
+          <dt>Sleeps 5</dt><dd>Two queen bedrooms, plus a sofa bed in the lounge for an adult or a child.</dd>
+          <dt>Beds</dt><dd>Pure French flax linen, Australian wool blankets and electric blankets.</dd>
+          <dt>Warm</dt><dd>The wood fire, a split system in the kitchen, and heaters in the bedrooms. Orange gets properly cold in winter, and sometimes snows.</dd>
+          <dt>Kitchen</dt><dd>Small oven and air fryer, hot plate, microwave, full fridge, a pod coffee machine with pods, and a dining table. A Weber on the verandah.</dd>
+          <dt>Also</dt><dd>One bathroom with a shower. Washing machine. A cot if you ask. Wifi and a flatscreen TV.</dd>
+          <dt>Private</dt><dd>Its own fenced yard and garden, and its own driveway. Liana lives in the main homestead, not far away.</dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+  <div class="rail" tabindex="0" role="region" aria-label="Photos inside the cottage">
+    <figure><img src="img/lounge.jpg" srcset="img/lounge-600.jpg 600w, img/lounge.jpg 1000w" sizes="(max-width:880px) 70vw, 26vw" alt="The lounge with an armchair beside the brick fireplace" width="1000" height="1250" loading="lazy"><figcaption>The lounge</figcaption></figure>
+    <figure><img src="img/bed1.jpg" srcset="img/bed1-600.jpg 600w, img/bed1.jpg 1000w" sizes="(max-width:880px) 70vw, 26vw" alt="Queen bedroom one, with a timber bedhead and flax linen" width="1000" height="1250" loading="lazy"><figcaption>Queen bedroom one</figcaption></figure>
+    <figure><img src="img/bed2.jpg" srcset="img/bed2-600.jpg 600w, img/bed2.jpg 1000w" sizes="(max-width:880px) 70vw, 26vw" alt="Queen bedroom two, with an iron bedhead" width="1000" height="1250" loading="lazy"><figcaption>Queen bedroom two</figcaption></figure>
+    <figure><img src="img/dining.jpg" srcset="img/dining-600.jpg 600w, img/dining.jpg 1000w" sizes="(max-width:880px) 70vw, 26vw" alt="A round timber dining table with flowers, next to the kitchen" width="1000" height="1250" loading="lazy"><figcaption>The dining table</figcaption></figure>
+    <figure><img src="img/kitchen.jpg" srcset="img/kitchen-600.jpg 600w, img/kitchen.jpg 1000w" sizes="(max-width:880px) 70vw, 26vw" alt="The kitchen bench with open shelves above" width="1000" height="1250" loading="lazy"><figcaption>The kitchen</figcaption></figure>
+    <figure><img src="img/hall.jpg" srcset="img/hall-600.jpg 600w, img/hall.jpg 1000w" sizes="(max-width:880px) 70vw, 26vw" alt="A doorway through to the lounge, with a wreath on the door" width="1000" height="1250" loading="lazy"><figcaption>Through to the lounge</figcaption></figure>
+    <figure><img src="img/bath.jpg" srcset="img/bath-600.jpg 600w, img/bath.jpg 1000w" sizes="(max-width:880px) 70vw, 26vw" alt="The bathroom with a timber vanity and a shower" width="1000" height="1250" loading="lazy"><figcaption>The bathroom</figcaption></figure>
+  </div>
+</section>
+
+<section class="bath wrap" id="bath">
+  <div class="inner">
+    <div>
+      <h2 class="big">The outdoor bath</h2>
+      <p class="lede">A clawfoot tub on a timber deck against the tin wall, looking out over the paddocks. The bubble bath and salts are there for you. At night the festoon lights come on.</p>
+      <p class="quote">"Highlights include the outdoor fireplace and the beautiful outdoor bath tub."</p>
+      <p class="who">Rachel, Airbnb, October 2026</p>
+    </div>
+    <figure class="ph" style="margin:0">
+      <div class="lamp" id="lamp"><img src="img/tubnight.jpg" srcset="img/tubnight-800.jpg 800w, img/tubnight.jpg 1400w" sizes="(max-width:880px) 100vw, 56vw" alt="The clawfoot bath at night under festoon lights, with the cottage window lit behind it" width="1400" height="1750" loading="lazy"></div>
+      <figcaption class="cap">The bath after dark.</figcaption>
+    </figure>
+  </div>
+  <div class="inner bath-strip">
+    <figure><img src="img/tubday.jpg" srcset="img/tubday-600.jpg 600w, img/tubday.jpg 1000w" sizes="(max-width:880px) 33vw, 26vw" alt="The bath deck by day, with pot plants and a towel on a chair" width="1000" height="1250" loading="lazy"><figcaption>By day</figcaption></figure>
+    <figure><img src="img/tubbub.jpg" srcset="img/tubbub-600.jpg 600w, img/tubbub.jpg 1000w" sizes="(max-width:880px) 33vw, 26vw" alt="The tub full of bubbles, with farmland behind" width="1000" height="1250" loading="lazy"><figcaption>Bubbles included</figcaption></figure>
+    <figure><img src="img/verandah.jpg" srcset="img/verandah-600.jpg 600w, img/verandah.jpg 1000w" sizes="(max-width:880px) 33vw, 26vw" alt="The back of the cottage with the bath deck lit up at dusk" width="1000" height="1250" loading="lazy"><figcaption>From the yard at dusk</figcaption></figure>
+  </div>
+</section>
+
+<section class="walk" id="creek" data-pin aria-label="The walk down to Molong Creek">
+  <div class="walk-stage">
+    <p class="walk-head">Follow the map on the fridge down the private laneway to Molong Creek.</p>
+    <div class="map" aria-hidden="true">
+      <div class="sheet"></div>
+      <span class="magnet"></span>
+      <svg viewBox="0 0 600 900">
+        <g fill="none" stroke="#2c2f33" stroke-linecap="round" stroke-linejoin="round">
+          <!-- the cottage, in the same plain hand as the rest of the sketch -->
+          <path d="M228 120 252 86h96l24 34z" stroke-width="3" fill="#e9e5df"/>
+          <path d="M214 126h172" stroke-width="3"/>
+          <rect x="232" y="126" width="136" height="44" stroke-width="3" fill="#fff"/>
+          <rect x="294" y="138" width="14" height="32" fill="#2f7369" stroke="none"/>
+          <!-- paddock fences -->
+          <path d="M60 250h120M60 262h120M430 330h120M430 342h120" stroke="#8f857d" stroke-width="2"/>
+          <path d="M70 244v26M100 244v26M130 244v26M160 244v26M440 324v26M470 324v26M500 324v26M530 324v26" stroke="#8f857d" stroke-width="2"/>
+          <!-- Molong Creek -->
+          <path d="M-10 610 C80 570 140 650 230 612 S380 560 450 612 S560 660 610 628" stroke="#2f7369" stroke-width="16" opacity=".22"/>
+          <path d="M-10 610 C80 570 140 650 230 612 S380 560 450 612 S560 660 610 628" stroke="#2f7369" stroke-width="3"/>
+          <!-- trees by the creek -->
+          <g stroke="#55634f" stroke-width="2.5"><circle cx="110" cy="540" r="18"/><circle cx="520" cy="560" r="16"/><circle cx="350" cy="690" r="20"/><circle cx="180" cy="720" r="15"/><circle cx="470" cy="800" r="18"/></g>
+          <!-- the waterfall: a few short drops off a ledge -->
+          <path d="M412 742h46M418 748v18M430 748v22M442 748v18M452 748v14" stroke="#2f7369" stroke-width="3"/>
+        </g>
+        <g font-family="Karla, sans-serif" font-size="22" fill="#2c2f33">
+          <text x="300" y="206" text-anchor="middle" font-weight="700">The cottage</text>
+          <text x="60" y="232">paddock</text>
+          <text x="430" y="312">paddock</text>
+          <text x="40" y="664" fill="#2f7369" font-weight="700">Molong Creek</text>
+          <text x="476" y="764">waterfall</text>
+          <text x="410" y="860" text-anchor="middle">picnic spot</text>
+          <text x="560" y="40" text-anchor="end" font-size="16" fill="#5d5f61">not to scale</text>
+        </g>
+      </svg>
+      <div class="trail" id="trail">
+        <svg viewBox="0 0 600 900" id="trail-svg">
+          <path id="path" d="M300 176 C300 230 260 250 262 300 S330 380 300 430 S220 480 228 540 S300 600 330 640 S420 700 432 790" fill="none" stroke="#2c2f33" stroke-width="4" stroke-dasharray="2 12" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <span class="walker" id="walker"></span>
+    </div>
+    <div class="stops">
+      <figure class="stop" style="opacity:1"><img src="img/trees.jpg" srcset="img/trees-600.jpg 600w, img/trees.jpg 1000w" sizes="(max-width:820px) 100vw, 52vw" alt="A big old gum tree in a dry grass paddock under a blue sky" width="1000" height="1250" loading="lazy"><figcaption><h3>Down the laneway</h3><p>Big old trees and open farmland the whole way. Stay on the lane and close any gates behind you.</p></figcaption></figure>
+      <figure class="stop"><img src="img/seat.jpg" srcset="img/seat-600.jpg 600w, img/seat.jpg 1000w" sizes="(max-width:820px) 100vw, 52vw" alt="Two white timber chairs by the creek under tall gums" width="1000" height="1250" loading="lazy"><figcaption><h3>Two chairs by the creek</h3><p>Take a picnic or a drink and sit a while. It's a short walk below the cottage.</p></figcaption></figure>
+      <figure class="stop"><img src="img/rods.jpg" srcset="img/rods-600.jpg 600w, img/rods.jpg 1000w" sizes="(max-width:820px) 100vw, 52vw" alt="Fishing rods and a landing net leaning on a tin wall" width="1000" height="1250" loading="lazy"><figcaption><h3>Bring a rod</h3><p>Fishing rods are provided, free, for a go in the creek.</p></figcaption></figure>
+      <figure class="stop"><img src="img/falls.jpg" srcset="img/falls-600.jpg 600w, img/falls.jpg 1000w" sizes="(max-width:820px) 100vw, 52vw" alt="Molong Creek running between grassy banks and leaning trees, near the private waterfall" width="1000" height="1250" loading="lazy"><figcaption><h3>Your own waterfall</h3><p>A private waterfall and picnic spot on Molong Creek. Listen to the birds, and watch for a platypus.</p></figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="farm" id="farm">
+  <div class="wrap">
+    <div class="inner">
+      <div class="farm-head">
+        <h2 class="big">The farm round you</h2>
+        <p class="lede">Cattle graze just below the cottage, and sheep along the road in. Kangaroos and king parrots turn up often. From the yard you can see back towards Mount Canobolas and Orange.</p>
+      </div>
+      <figure class="sunset"><img src="img/sunset.jpg" srcset="img/sunset-800.jpg 800w, img/sunset.jpg 2000w" sizes="100vw" alt="The sun setting over farmland and low hills" width="2000" height="1125" loading="lazy"></figure>
+      <div class="farm-grid">
+        <figure class="w4"><img src="img/cows.jpg" srcset="img/cows-600.jpg 600w, img/cows.jpg 1000w" sizes="(max-width:880px) 50vw, 33vw" alt="Cattle grazing on the green slope below the cottage" width="1000" height="1250" loading="lazy"><figcaption>Just below the cottage</figcaption></figure>
+        <figure class="w4"><img src="img/creek2.jpg" srcset="img/creek2-600.jpg 600w, img/creek2.jpg 1000w" sizes="(max-width:880px) 50vw, 33vw" alt="Molong Creek winding between grassy banks and dead trees" width="1000" height="1250" loading="lazy"><figcaption>Molong Creek</figcaption></figure>
+        <figure class="w4"><img src="img/herd.jpg" srcset="img/herd-600.jpg 600w, img/herd.jpg 1152w" sizes="(max-width:880px) 100vw, 33vw" alt="A herd of cattle grazing in a green paddock at golden hour" width="1152" height="1440" loading="lazy"><figcaption>Along the road in</figcaption></figure>
+      </div>
+      <div class="fire">
+        <img src="img/firepit.jpg" srcset="img/firepit-600.jpg 600w, img/firepit.jpg 1000w" sizes="(max-width:880px) 100vw, 40vw" alt="The outdoor fire burning in a gravel circle ringed with log seats, beside the cottage" width="1000" height="1250" loading="lazy">
+        <div>
+          <h3>The outdoor fire</h3>
+          <p>Sit round it with a local wine, toast marshmallows, tell a few stories, and watch the stars come out.</p>
+          <p class="note">Outdoor fires are for the cooler months. Fire bans are followed in the hot months.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="guests wrap" id="guests">
+  <div class="inner">
+    <h2 class="big">From guests</h2>
+    <p class="score"><b>4.95</b><span>from 125 reviews on Airbnb. Liana is a Superhost.</span></p>
+    <ul class="quotes">
+      <li><p class="quote">"This is one of my favourite Airbnb stays I've had. The property is beautiful and peaceful, with the birds chirping to keep you company."</p><p class="who">Sinead, August 2026</p></li>
+      <li><p class="quote">"Liana was so attentive and left us a few things to kick off our honeymoon."</p><p class="who">Beka, October 2026</p></li>
+      <li><p class="quote">"The surrounds are very peaceful."</p><p class="who">Rachel, October 2026</p></li>
+    </ul>
+  </div>
+</section>
+
+<section class="around wrap" id="around">
+  <div class="inner">
+    <div>
+      <h2 class="big">Getting here</h2>
+      <table class="dist">
+        <thead><tr><th scope="col">By road, roughly</th><th scope="col"><span class="vh">Distance</span></th></tr></thead>
+        <tbody>
+          <tr><td>Molong</td><td>13 km</td></tr>
+          <tr><td>Orange</td><td>30 km</td></tr>
+          <tr><td>Canberra</td><td>290 km</td></tr>
+          <tr><td>Sydney</td><td>290 km</td></tr>
+        </tbody>
+      </table>
+      <p class="small">The last 4 km is an unsealed road, so take it slowly. Book restaurants and wineries in Orange ahead, or arrange a wine tour pick-up.</p>
+    </div>
+    <figure class="ph" style="margin:0">
+      <img src="img/road.jpg" srcset="img/road-800.jpg 800w, img/road.jpg 1600w" sizes="(max-width:880px) 100vw, 44vw" alt="A gravel road running through paddocks towards the setting sun" width="1600" height="900" loading="lazy">
+      <figcaption class="cap">The gravel road in, at sunset.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="book wrap" id="book">
+  <div class="inner">
+    <h2 class="big">Check dates</h2>
+    <div class="book-grid">
+      <div>
+        <p class="lede">From A$349 a night, two nights minimum. The whole cottage, for up to five.</p>
+        <div class="acts">
+          <a class="btn" href="https://www.airbnb.com.au/rooms/48646791" rel="noopener" target="_blank">See dates on Airbnb</a>
+          <a class="btn line" href="tel:+61401327445">Call 0401 327 445</a>
+        </div>
+        <ul>
+          <li>4 km of unsealed road at the end. Drive carefully.</li>
+          <li>Outdoor fires in the cooler months only.</li>
+          <li>Guests have the cottage and its yard. Please keep out of the farm sheds and animal yards.</li>
+        </ul>
+      </div>
+      <img src="img/front2.jpg" srcset="img/front2-800.jpg 800w, img/front2.jpg 1600w" sizes="(max-width:880px) 100vw, 44vw" alt="The cottage from the side, with its verandah and green lawn" width="1600" height="1067" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<section class="close" aria-label="Bob's Creek Cottage at sunset">
+  <img src="img/creekhill.jpg" srcset="img/creekhill-800.jpg 800w, img/creekhill.jpg 1600w" sizes="100vw" alt="Molong Creek below the cottage and the Guanna Hill landscape at sunset" width="1600" height="900" loading="lazy">
+  <div class="panel">
+    <h2>Wood fire burning, bath run, stars out.</h2>
+    <p>Bob's Creek Cottage, Jennings Lane, Molong.</p>
+    <div class="acts">
+      <a class="btn glow" href="#book">Check dates</a>
+      <a class="btn line" href="https://www.instagram.com/bobscreekcottage/" rel="noopener" target="_blank">@bobscreekcottage</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="wrap">
+  <div class="inner">
+    <p>A preview made by Lamplit Studio for Bob's Creek Cottage. Not affiliated, not live.</p>
+    <p>Photos are Bob's Creek Cottage's own, from their Airbnb listing.</p>
+  </div>
+</footer>
+
+<div class="phonebar" id="phonebar">
+  <a class="btn" href="#book">Check dates</a>
+  <a class="btn line" href="tel:+61401327445">Call</a>
+</div>
+
+<script>
+(function(){
+  var mq=window.matchMedia('(prefers-reduced-motion: reduce)');
+  var reduce=mq.matches;
+  if(mq.addEventListener) mq.addEventListener('change',function(){location.reload()});
+  var q=function(s){return document.querySelector(s)};
+  var bar=q('#phonebar'), dusk=q('#dusk'), walk=q('#creek'), book=q('#book');
+  var dsky=q('.l-daysky'), day=q('.l-day'), sky=q('.l-sky'), cot=q('.l-cottage'), shade=q('.l-shade'), c1=q('.copy'), c2=q('.copy-night');
+  var trail=q('#trail'), tsvg=q('#trail-svg'), path=q('#path'), walker=q('#walker'), map=q('.map');
+  var stops=[].slice.call(document.querySelectorAll('.stop'));
+  var lamp=q('#lamp');
+  var clamp=function(v){return v<0?0:v>1?1:v};
+  var seg=function(p,a,b){return clamp((p-a)/(b-a))};
+  var ease=function(t){return t<.5?2*t*t:1-Math.pow(-2*t+2,2)/2};
+  function prog(el){var r=el.getBoundingClientRect();var st=el.firstElementChild;var span=el.offsetHeight-st.offsetHeight;return span>0?clamp(-r.top/span):0}
+  // sample the trail once; the walker moves by transform only
+  var pts=[], L=path.getTotalLength();
+  for(var i=0;i<=200;i++){var pt=path.getPointAtLength(L*i/200);pts.push([pt.x,pt.y])}
+  var ticking=false;
+  function frame(){
+    ticking=false;
+    var vh=window.innerHeight, bk=book.getBoundingClientRect();
+    var wr=walk.getBoundingClientRect(), inWalk=wr.top<vh*.5 && wr.bottom>vh*.5;
+    bar.classList.toggle('on', bar.contains(document.activeElement) || (!inWalk && dusk.getBoundingClientRect().bottom<vh*.4 && (bk.top>vh*.9 || bk.bottom<0)));
+    if(reduce) return;
+    // Act 1: day fades, the dusk sky stays behind the cottage cut-out
+    var p=prog(dusk);
+    day.style.opacity=(1-ease(seg(p,.08,.5))).toFixed(3);
+    dsky.style.opacity=day.style.opacity;
+    sky.style.transform='translate3d(0,'+(-8+ease(seg(p,0,1))*8).toFixed(2)+'%,0) scale(1.1)';
+    cot.style.transform='scale('+(1+ease(seg(p,0,1))*.06).toFixed(4)+')';
+    shade.style.opacity=ease(seg(p,.3,.8)).toFixed(3);
+    c1.style.opacity=(1-seg(p,.22,.4)).toFixed(3);
+    c2.style.opacity=seg(p,.55,.72).toFixed(3);
+    c2.style.transform='translate3d(0,'+((1-seg(p,.55,.72))*20).toFixed(1)+'px,0)';
+    // The peak: the trail is uncovered from the top, the walker follows it, the photos change at each stop
+    var k=prog(walk), w=seg(k,.04,.94);
+    trail.style.transform='translate3d(0,'+(-(1-w)*100).toFixed(3)+'%,0)';
+    tsvg.style.transform='translate3d(0,'+((1-w)*100).toFixed(3)+'%,0)';
+    var pt=pts[Math.round(w*200)], mw=map.offsetWidth, mh=map.offsetHeight;
+    walker.style.transform='translate3d('+(pt[0]/600*mw).toFixed(1)+'px,'+(pt[1]/900*mh).toFixed(1)+'px,0)';
+    var at=w*stops.length;
+    stops.forEach(function(s,i){var o=clamp((.5-Math.abs(at-(i+.5)))*7+.5);if(i===0&&at<.5)o=1;if(i===stops.length-1&&at>stops.length-.5)o=1;s.style.opacity=o.toFixed(3);s.inert=o<.5});
+    // the bath photo opens like a curtain drawn back
+    var r=lamp.getBoundingClientRect(), t=clamp((vh-r.top)/(vh*.8));
+    lamp.style.setProperty('--wipe',((1-ease(t))*42).toFixed(2)+'%');
+  }
+  function onScroll(){if(!ticking){ticking=true;requestAnimationFrame(frame)}}
+  window.addEventListener('scroll',onScroll,{passive:true});
+  window.addEventListener('resize',onScroll);
+  frame();
+})();
+</script>
+</body>
+</html>
